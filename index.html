@@ -665,26 +665,28 @@
   }
 </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  </head>
+  <style>.unav{background-color:#060d1a;border-bottom:1px solid #1a2a4a;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:9000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif;box-sizing:border-box}.unav *{box-sizing:border-box}.unav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}.unav-brand-en{font-size:.6rem;color:#808a9a;letter-spacing:1.5px;text-transform:uppercase;line-height:1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:400}.unav-brand-ja{font-size:.95rem;color:#c8a84e;font-weight:700;line-height:1;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif;letter-spacing:.05em;margin-top:4px}.unav-links{display:flex;align-items:center;gap:4px}.unav-links a{color:#b0b8c8;text-decoration:none;font-size:.85rem;padding:8px 14px;border-radius:6px;transition:all .25s ease;white-space:nowrap;font-weight:500;background:none;border:none}.unav-links a:hover{color:#fff;background-color:rgba(200,168,78,.12)}.unav-links a.unav-active{color:#c8a84e;background-color:rgba(200,168,78,.15);font-weight:600}.unav-links a.unav-cta{color:#0a1628;background-color:#c8a84e;font-weight:600;border-radius:20px;padding:8px 18px;margin-left:4px}.unav-links a.unav-cta:hover{background-color:#d4b862;color:#0a1628}.unav-toggle{display:none;background:none;border:none;color:#c8a84e;font-size:1.5rem;cursor:pointer;padding:4px}@media (max-width:768px){.unav-links{display:none;position:absolute;top:60px;left:0;right:0;background-color:#060d1a;border-bottom:1px solid #1a2a4a;flex-direction:column;align-items:stretch;padding:12px 16px;gap:4px}.unav-links.unav-open{display:flex}.unav-links a{text-align:left}.unav-links a.unav-cta{margin-left:0;text-align:center}.unav-toggle{display:block}}</style>
+</head>
 <body>
     <h1 style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">学習コンテンツ</h1>
 
-<header>
-  <div class="logo-area">
-    <span class="logo-jp">産業技術アカデミー</span>
-    <span class="logo-en">Industrial Technology Academy</span>
-  </div>
-  <nav>
-    <a href="https://sangyo-tech.jp/" style="display:inline-block;padding:8px 16px;background:#1a5276;color:#6aacdd;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;margin-right:6px;border:1px solid #6aacdd">TOP</a>
-    <button class="active" onclick="showSection('home', this)">ホーム</button>
-    <button onclick="showSection('quality', this)">品質管理</button>
-    <button onclick="showSection('gmp', this)">健康食品GMP</button>
-    <button onclick="showSection('manual', this)">マニュアル作成</button>
-    <button onclick="showSection('sme', this)">中小企業向け</button>
-    <button onclick="showSection('iso9001', this)">ISO 9001</button>
-    <button onclick="showSection('all', this)">すべてのコース</button>
-  </nav>
-</header>
+<nav class="unav" role="navigation" aria-label="メインナビゲーション">
+      <a href="https://sangyo-tech.jp/" class="unav-brand" aria-label="産業技術アカデミー">
+        <div>
+          <div class="unav-brand-en">Industrial Technology Academy</div>
+          <div class="unav-brand-ja">産業技術アカデミー</div>
+        </div>
+      </a>
+      <button class="unav-toggle" onclick="document.getElementById('unavLinks').classList.toggle('unav-open')" aria-label="メニュー">☰</button>
+      <div class="unav-links" id="unavLinks">
+      <a href="https://sangyo-tech.jp/">TOP</a>
+      <a href="https://course.sangyo-tech.jp/">コース</a>
+      <a href="https://pricing.sangyo-tech.jp/">料金</a>
+      <a href="https://service.sangyo-tech.jp/">支援サービス</a>
+      <a href="https://about-us.sangyo-tech.jp/">会社情報</a>
+        <a href="https://apply.sangyo-tech.jp/" class="unav-cta">お申込み</a>
+      </div>
+    </nav>
 
 <div class="hero">
   <div class="hero-inner">
