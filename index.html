@@ -32,15 +32,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a2e;
-    --ink-light: #2d2d4a;
-    --paper: #f5f2ed;
-    --paper-warm: #ede9e0;
-    --accent: #c4333a;
-    --accent-gold: #b8860b;
-    --accent-blue: #1e3a5f;
-    --muted: #4a4a5c;
-    --border: #d4cfc4;
+    --ink: #e0e0e8;
+    --ink-light: #b0b0c0;
+    --paper: #1a1a2e;
+    --paper-warm: #222240;
+    --accent: #e05060;
+    --accent-gold: #d4a017;
+    --accent-blue: #5a9fd4;
+    --muted: #9090a8;
+    --border: #3a3a5a;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -216,7 +216,7 @@
   }
 
   .category-card {
-    background: #fff;
+    background: var(--paper-warm);
     border: 1px solid var(--border);
     padding: 28px;
     cursor: pointer;
@@ -323,7 +323,7 @@
     align-items: center;
     gap: 16px;
     padding: 16px 20px;
-    background: #fff;
+    background: var(--paper-warm);
     border: 1px solid var(--border);
     transition: all 0.2s;
     cursor: default;
@@ -361,7 +361,7 @@
   }
 
   .course-badge.new {
-    background: #fff0f0;
+    background: var(--paper-warm)0f0;
     border-color: var(--accent);
     color: var(--accent);
   }
@@ -379,7 +379,7 @@
   }
 
   .mini-section {
-    background: #fff;
+    background: var(--paper-warm);
     border: 1px solid var(--border);
     border-radius: 2px;
     overflow: hidden;
@@ -441,7 +441,7 @@
     font-size: 0.9rem;
     border: 2px solid var(--border);
     border-radius: 2px;
-    background: #fff;
+    background: var(--paper-warm);
     color: var(--ink);
     outline: none;
     transition: border-color 0.2s;
@@ -561,9 +561,9 @@
     gap: 3px;
     font-size: 0.62rem;
     padding: 2px 7px;
-    background: #fff8e6;
+    background: var(--paper-warm)8e6;
     border: 1px solid #d4a017;
-    color: #8a6500;
+    color: #d4a017;
     border-radius: 2px;
     font-weight: 600;
     white-space: nowrap;
@@ -572,7 +572,7 @@
 
   /* SECTION-LEVEL QUIZ BANNER */
   .section-quiz-banner {
-    background: linear-gradient(135deg, #fff8e6 0%, #fff3d0 100%);
+    background: linear-gradient(135deg, #3a3020 0%, #3a3020 100%);
     border: 1px solid #d4a017;
     border-left: 4px solid #d4a017;
     border-radius: 2px;
@@ -591,13 +591,13 @@
     font-family: 'Noto Serif JP', serif;
     font-size: 1rem;
     font-weight: 700;
-    color: #3a2800;
+    color: #d4a017;
     margin-bottom: 6px;
   }
 
   .sqb-desc {
     font-size: 0.88rem;
-    color: #5a3e00;
+    color: #d4a017;
     line-height: 1.7;
   }
 
@@ -683,7 +683,7 @@
       <a href="https://course.sangyo-tech.jp/">コース</a>
       <a href="https://pricing.sangyo-tech.jp/">料金</a>
       <a href="https://service.sangyo-tech.jp/">支援サービス</a>
-      <a href="https://about-us.sangyo-tech.jp/">会社情報</a>
+      <a href="https://about-us.sangyo-tech.jp/">私たちについて</a>
         <a href="https://apply.sangyo-tech.jp/" class="unav-cta">お申込み</a>
       </div>
     </nav>
@@ -823,22 +823,22 @@
     <!-- MONTHLY UPDATE + REQUEST BLOCKS -->
     <div class="update-request-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px">
 
-      <div style="background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);padding:28px;border-radius:2px">
+      <div style="background: var(--paper-warm);border:1px solid var(--border);border-top:4px solid var(--accent);padding:28px;border-radius:2px">
         <div style="font-size:1.6rem;margin-bottom:10px">📦</div>
         <div style="font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:10px">月5本以上追加！</div>
         <p style="font-size:0.9rem;color:#3a3a4a;line-height:1.8">規制の改定・現場トレンドに合わせて、月5本以上の新しい動画コンテンツを継続的に追加しています。会員の方は追加料金なしで最新コンテンツにアクセス可能です。</p>
         <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
-          <span style="font-size:0.68rem;padding:3px 10px;background:#fff0f0;border:1px solid #e8b4b4;color:var(--accent);border-radius:2px;font-weight:600">月5本以上追加！</span>
+          <span style="font-size:0.68rem;padding:3px 10px;background: var(--paper-warm)0f0;border:1px solid #e8b4b4;color:var(--accent);border-radius:2px;font-weight:600">月5本以上追加！</span>
           <span style="font-size:0.68rem;padding:3px 10px;background:var(--paper-warm);border:1px solid var(--border);color:var(--muted);border-radius:2px;font-weight:600">追加料金なし</span>
         </div>
       </div>
 
-      <div style="background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent-gold);padding:28px;border-radius:2px">
+      <div style="background: var(--paper-warm);border:1px solid var(--border);border-top:4px solid var(--accent-gold);padding:28px;border-radius:2px">
         <div style="font-size:1.6rem;margin-bottom:10px">💬</div>
         <div style="font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:10px">会員からのご要望に喜んで対応します</div>
         <p style="font-size:0.9rem;color:#3a3a4a;line-height:1.8">「この業種向けの内容がほしい」「この規格の解説を追加してほしい」など、会員の皆さまからのコンテンツ要望を積極的に受け付けています。現場のニーズに応えるコース制作を継続します。</p>
         <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
-          <span style="font-size:0.68rem;padding:3px 10px;background:#fffbe6;border:1px solid #d4a017;color:#8a6500;border-radius:2px;font-weight:600">要望受付中</span>
+          <span style="font-size:0.68rem;padding:3px 10px;background: var(--paper-warm)be6;border:1px solid #d4a017;color: #d4a017;border-radius:2px;font-weight:600">要望受付中</span>
           <span style="font-size:0.68rem;padding:3px 10px;background:var(--paper-warm);border:1px solid var(--border);color:var(--muted);border-radius:2px;font-weight:600">会員限定</span>
         </div>
       </div>
