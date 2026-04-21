@@ -41,18 +41,18 @@ body {
 a { color: inherit; text-decoration: none; }
 
 /* ===== ナビバー ===== */
-.unav{background:#060d1a;border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
-.unav-logo{font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:#fff;letter-spacing:.06em;white-space:nowrap}
-.unav-logo span{display:block;font-size:11px;font-weight:400;color:var(--text-muted);letter-spacing:.15em;font-family:'Noto Sans JP',sans-serif}
-.unav-links{display:flex;align-items:center;gap:24px;font-size:15px;font-weight:500;letter-spacing:.03em}
-.unav-links a{transition:opacity .2s}
-.unav-links a:hover{opacity:.7}
-.unav-links a:nth-child(1){color:#60a5fa}
-.unav-links a:nth-child(2){color:#34d399}
-.unav-links a:nth-child(3){color:#fbbf24}
-.unav-links a:nth-child(4){color:#f472b6}
-.unav-links a:nth-child(5){color:#c084fc}
-.unav-links .btn-apply{background:var(--accent-gold);color:#000;padding:6px 18px;border-radius:4px;font-weight:600;font-size:14px;letter-spacing:.04em}
+.unav{background-color:#060d1a;border-bottom:1px solid #1a2a4a;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:9000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif;box-sizing:border-box}
+.unav *{box-sizing:border-box}
+.unav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.unav-brand-en{font-size:.6rem;color:#808a9a;letter-spacing:1.5px;text-transform:uppercase;line-height:1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:400}
+.unav-brand-ja{font-size:.95rem;color:#c8a84e;font-weight:700;line-height:1;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif;letter-spacing:.05em;margin-top:4px}
+.unav-links{display:flex;align-items:center;gap:4px}
+.unav-links a{color:#b0b8c8;text-decoration:none;font-size:.85rem;padding:8px 14px;border-radius:6px;transition:all .25s ease;white-space:nowrap;font-weight:500;background:none;border:none}
+.unav-links a:nth-child(1){color:#7dd3fc}.unav-links a:nth-child(2){color:#fda4af}.unav-links a:nth-child(3){color:#fcd34d}.unav-links a:nth-child(4){color:#86efac}.unav-links a:nth-child(5){color:#c4b5fd}.unav-links a:nth-child(6){color:#67e8f9}.unav-links a:hover{color:#fff;background-color:rgba(200,168,78,.12)}
+.unav-links a.unav-active{color:#fff;font-weight:700;border-bottom:3px solid #c8a84e;padding-bottom:5px;border-radius:6px 6px 0 0;background:rgba(200,168,78,.08)}
+.unav-links a.unav-cta{color:#0a1628;background-color:#c8a84e;font-weight:600;border-radius:20px;padding:8px 18px;margin-left:4px}
+.unav-links a.unav-cta:hover{background-color:#d4b862;color:#0a1628}
+.unav-toggle{display:none;background:none;border:none;color:#c8a84e;font-size:1.5rem;cursor:pointer;padding:4px}
 
 /* ===== ヒーロー ===== */
 .hero {
@@ -396,33 +396,8 @@ a { color: inherit; text-decoration: none; }
 }
 .footer a { color: var(--accent-gold); }
 
-/* ===== ハンバーガーメニュー ===== */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    z-index: 200;
-}
-.hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #fff;
-    margin: 5px 0;
-    transition: all .3s;
-    border-radius: 2px;
-}
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
+/* ===== ナビバー モバイル ===== */
+@media (max-width:768px){.unav-links{display:none;position:absolute;top:60px;left:0;right:0;background-color:#060d1a;border-bottom:1px solid #1a2a4a;flex-direction:column;align-items:stretch;padding:12px 16px;gap:4px}.unav-links.unav-open{display:flex}.unav-links a{text-align:left}.unav-links a.unav-cta{margin-left:0;text-align:center}.unav-toggle{display:block}}
 
 /* ===== タブレット (768px〜1024px) ===== */
 @media (max-width: 1024px) {
@@ -443,37 +418,6 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== スマホ (768px以下) ===== */
 @media (max-width: 768px) {
-    .hamburger { display: block; }
-    .unav { padding: 0 16px; height: 52px; }
-    .unav-logo { font-size: 15px; }
-    .unav-logo span { font-size: 9px; }
-    .unav-links {
-        display: none;
-        position: fixed;
-        top: 52px;
-        left: 0;
-        right: 0;
-        background: #060d1a;
-        flex-direction: column;
-        padding: 20px 24px;
-        gap: 0;
-        border-bottom: 1px solid var(--border);
-        z-index: 150;
-        box-shadow: 0 8px 32px rgba(0,0,0,.5);
-    }
-    .unav-links.open { display: flex; }
-    .unav-links a {
-        padding: 14px 0;
-        font-size: 16px;
-        border-bottom: 1px solid var(--border);
-    }
-    .unav-links a:last-child { border-bottom: none; }
-    .unav-links .btn-apply {
-        margin-top: 12px;
-        text-align: center;
-        padding: 12px 18px;
-        font-size: 15px;
-    }
 
     .hero { padding: 48px 16px 36px; }
     .hero-label { font-size: 12px; }
@@ -521,20 +465,23 @@ a { color: inherit; text-decoration: none; }
 <body>
 
 <!-- ナビバー -->
-<nav class="unav">
-    <div class="unav-logo"><span>INDUSTRIAL TECHNOLOGY ACADEMY</span>産業技術アカデミー</div>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="メニュー">
-        <span></span><span></span><span></span>
-    </button>
-    <div class="unav-links" id="navLinks">
-        <a href="https://sangyo-tech.jp/">TOP</a>
-        <a href="https://course.sangyo-tech.jp/">コース</a>
-        <a href="https://pricing.sangyo-tech.jp/">料金</a>
-        <a href="https://service.sangyo-tech.jp/">支援サービス</a>
-        <a href="https://about-us.sangyo-tech.jp/">私たちについて</a>
-        <a href="https://audio.sangyo-tech.jp/">品質ラジオ</a>
-      <a href="https://apply.sangyo-tech.jp/" class="btn-apply">お申込み</a>
+<nav class="unav" role="navigation" aria-label="メインナビゲーション">
+  <a href="https://sangyo-tech.jp/" class="unav-brand" aria-label="産業技術アカデミー">
+    <div>
+      <div class="unav-brand-en">Industrial Technology Academy</div>
+      <div class="unav-brand-ja">産業技術アカデミー</div>
     </div>
+  </a>
+  <button class="unav-toggle" onclick="document.getElementById('unavLinks').classList.toggle('unav-open')" aria-label="メニュー">☰</button>
+  <div class="unav-links" id="unavLinks">
+    <a href="https://sangyo-tech.jp/">TOP</a>
+    <a href="https://course.sangyo-tech.jp/" class="unav-active">コース</a>
+    <a href="https://pricing.sangyo-tech.jp/">料金</a>
+    <a href="https://service.sangyo-tech.jp/">支援サービス</a>
+    <a href="https://sangyo-tech.jp/news/">規制ニュース</a>
+    <a href="https://about-us.sangyo-tech.jp/">私たちについて</a>
+    <a href="https://apply.sangyo-tech.jp/" class="unav-cta">お申込み</a>
+  </div>
 </nav>
 
 <!-- ヒーロー -->
@@ -551,7 +498,7 @@ a { color: inherit; text-decoration: none; }
         <div class="stat-label">総コンテンツ数</div>
     </div>
     <div class="stat-item">
-        <div class="stat-num">16</div>
+        <div class="stat-num">20</div>
         <div class="stat-label">コースカテゴリ</div>
     </div>
     <div class="stat-item">
@@ -1236,6 +1183,80 @@ a { color: inherit; text-decoration: none; }
 
 <!-- ===== 準備中 ===== -->
 <div class="section-header">
+    <h2><span class="badge badge-planned">台本完了</span> 業界特化コース（近日配信）</h2>
+</div>
+<div class="course-grid">
+    <div class="course-card">
+        <div class="card-top"><div class="card-icon">⚕️</div><div class="card-status status-script">台本完了</div></div>
+        <div class="card-title">GQP省令 品質管理基準</div>
+        <div class="card-industry">医薬品・化粧品</div>
+        <div class="card-meta"><span>📄 7本</span><span>✅ 確認テスト完了（70問）</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:45%;background:var(--accent-blue)"></div></div>
+        <button class="accordion-toggle" onclick="toggleAccordion(this)">▼ 研修一覧を見る</button>
+        <div class="accordion-content">
+            <ul class="accordion-list">
+                <li>GQP省令とは何か — 品質管理基準の全体像と位置づけ</li>
+                <li>品質保証責任者（QP）の役割・要件・実務</li>
+                <li>製造業者との取決め — GQP省令第7条の実務</li>
+                <li>市場への出荷管理 — 出荷判定の手順と記録</li>
+                <li>変更管理と逸脱管理 — GQP省令第9・10条</li>
+                <li>品質情報処理と回収対応 — GQP省令第11条・回収管理</li>
+                <li>自己点検・教育訓練・文書管理 — GQP省令の維持管理三本柱</li>
+            </ul>
+        </div>
+    </div>
+    <div class="course-card">
+        <div class="card-top"><div class="card-icon">🏷️</div><div class="card-status status-script">台本完了</div></div>
+        <div class="card-title">食品表示法・景品表示法</div>
+        <div class="card-industry">食品・飲料</div>
+        <div class="card-meta"><span>📄 5本</span><span>✅ 確認テスト完了（50問）</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:45%;background:var(--accent-blue)"></div></div>
+        <button class="accordion-toggle" onclick="toggleAccordion(this)">▼ 研修一覧を見る</button>
+        <div class="accordion-content">
+            <ul class="accordion-list">
+                <li>食品表示法の目的と全体像 — 消費者庁の役割</li>
+                <li>アレルゲン表示の実務 — 特定原材料8品目と義務/推奨の違い</li>
+                <li>栄養成分表示の実務 — 5必須項目と測定方法</li>
+                <li>景品表示法の基礎 — 不当表示の3類型と2024年改正</li>
+                <li>食品表示違反の予防と内部監査 — 実務チェックリストの活用</li>
+            </ul>
+        </div>
+    </div>
+    <div class="course-card">
+        <div class="card-top"><div class="card-icon">📦</div><div class="card-status status-script">台本完了</div></div>
+        <div class="card-title">包装資材・段ボール品質管理</div>
+        <div class="card-industry">食品・製造業</div>
+        <div class="card-meta"><span>📄 4本</span><span>✅ 確認テスト完了（40問）</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:45%;background:var(--accent-blue)"></div></div>
+        <button class="accordion-toggle" onclick="toggleAccordion(this)">▼ 研修一覧を見る</button>
+        <div class="accordion-content">
+            <ul class="accordion-list">
+                <li>段ボールの基礎知識 — 構造・フルート種類・JIS規格</li>
+                <li>段ボールの品質検査実務 — BCT・含水率・受入検査手順</li>
+                <li>プラスチック包装材の種類と食品衛生規制</li>
+                <li>包装資材のコスト管理とサステナビリティ対応</li>
+            </ul>
+        </div>
+    </div>
+    <div class="course-card">
+        <div class="card-top"><div class="card-icon">🖨️</div><div class="card-status status-script">台本完了</div></div>
+        <div class="card-title">印刷・インク品質管理</div>
+        <div class="card-industry">印刷・包装</div>
+        <div class="card-meta"><span>📄 4本</span><span>✅ 確認テスト完了（40問）</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:45%;background:var(--accent-blue)"></div></div>
+        <button class="accordion-toggle" onclick="toggleAccordion(this)">▼ 研修一覧を見る</button>
+        <div class="accordion-content">
+            <ul class="accordion-list">
+                <li>印刷品質管理の基礎 — 色差ΔE・バーコード品質・受入検査</li>
+                <li>インク安全性管理 — NL規制・食品接触材料・残留溶剤</li>
+                <li>ラベル表示管理と改訂管理 — 薬機法・食品表示法との連携</li>
+                <li>グリーンマーク・植物油インク・環境配慮印刷</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section-header">
     <h2><span class="badge badge-soon">準備中</span> 今後リリース予定</h2>
 </div>
 <div class="course-grid">
@@ -1358,6 +1379,30 @@ a { color: inherit; text-decoration: none; }
                     <td><span class="status-dot" style="background:var(--accent-blue)"></span>近日配信</td>
                 </tr>
                 <tr>
+                    <td class="matrix-course-name">GQP省令</td>
+                    <td class="matrix-industry">医薬品・化粧品</td>
+                    <td class="matrix-count">7</td>
+                    <td><span class="status-dot" style="background:var(--accent-blue)"></span>近日配信</td>
+                </tr>
+                <tr>
+                    <td class="matrix-course-name">食品表示法・景品表示法</td>
+                    <td class="matrix-industry">食品</td>
+                    <td class="matrix-count">5</td>
+                    <td><span class="status-dot" style="background:var(--accent-blue)"></span>近日配信</td>
+                </tr>
+                <tr>
+                    <td class="matrix-course-name">包装資材・段ボール品質管理</td>
+                    <td class="matrix-industry">食品・製造業</td>
+                    <td class="matrix-count">4</td>
+                    <td><span class="status-dot" style="background:var(--accent-blue)"></span>近日配信</td>
+                </tr>
+                <tr>
+                    <td class="matrix-course-name">印刷・インク品質管理</td>
+                    <td class="matrix-industry">印刷・包装</td>
+                    <td class="matrix-count">4</td>
+                    <td><span class="status-dot" style="background:var(--accent-blue)"></span>近日配信</td>
+                </tr>
+                <tr>
                     <td class="matrix-course-name">QC検定3級対策</td>
                     <td class="matrix-industry">全業界共通</td>
                     <td class="matrix-count">—</td>
@@ -1413,19 +1458,12 @@ a { color: inherit; text-decoration: none; }
 </footer>
 
 <script>
-function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    const btn = document.querySelector('.hamburger');
-    nav.classList.toggle('open');
-    btn.classList.toggle('active');
-}
 // メニュー外クリックで閉じる
 document.addEventListener('click', function(e) {
-    const nav = document.getElementById('navLinks');
-    const btn = document.querySelector('.hamburger');
-    if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) {
-        nav.classList.remove('open');
-        btn.classList.remove('active');
+    const nav = document.getElementById('unavLinks');
+    const btn = document.querySelector('.unav-toggle');
+    if (nav && nav.classList.contains('unav-open') && !nav.contains(e.target) && btn && !btn.contains(e.target)) {
+        nav.classList.remove('unav-open');
     }
 });
 
