@@ -41,14 +41,14 @@ body {
 a { color: inherit; text-decoration: none; }
 
 /* ===== ナビバー ===== */
-.unav{background-color:#060d1a;border-bottom:1px solid #1a2a4a;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:9000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif;box-sizing:border-box}
+.unav{background-color:#060d1a;border-bottom:1px solid #1a2a4a;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:9000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 .unav *{box-sizing:border-box}
 .unav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
 .unav-brand-en{font-size:.6rem;color:#808a9a;letter-spacing:1.5px;text-transform:uppercase;line-height:1;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:400}
 .unav-brand-ja{font-size:.95rem;color:#c8a84e;font-weight:700;line-height:1;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif;letter-spacing:.05em;margin-top:4px}
 .unav-links{display:flex;align-items:center;gap:4px}
-.unav-links a{color:#b0b8c8;text-decoration:none;font-size:.85rem;padding:8px 14px;border-radius:6px;transition:all .25s ease;white-space:nowrap;font-weight:500;background:none;border:none}
-.unav-links a:nth-child(1){color:#7dd3fc}.unav-links a:nth-child(2){color:#fda4af}.unav-links a:nth-child(3){color:#fcd34d}.unav-links a:nth-child(4){color:#86efac}.unav-links a:nth-child(5){color:#c4b5fd}.unav-links a:nth-child(6){color:#67e8f9}.unav-links a:hover{color:#fff;background-color:rgba(200,168,78,.12)}
+.unav-links a{color:#b0b8c8;text-decoration:none;font-size:.85rem;padding:8px 14px;border-radius:6px;transition:background-color .2s ease,color .2s ease;white-space:nowrap;font-weight:500;background:none;border:none}
+.unav-links a:nth-child(1){color:#7dd3fc}.unav-links a:nth-child(2){color:#fda4af}.unav-links a:nth-child(3){color:#fcd34d}.unav-links a:nth-child(4){color:#86efac}.unav-links a:nth-child(5){color:#c4b5fd}.unav-links a:nth-child(6){color:#67e8f9}.unav-links a:hover{color:#fff;background-color:rgba(200,168,78,.12)}.unav-links a:active,.unav-links a:focus{outline:none}
 .unav-links a.unav-active{color:#fff;font-weight:700;border-bottom:3px solid #c8a84e;padding-bottom:5px;border-radius:6px 6px 0 0;background:rgba(200,168,78,.08)}
 .unav-links a.unav-cta{color:#0a1628;background-color:#c8a84e;font-weight:600;border-radius:20px;padding:8px 18px;margin-left:4px}
 .unav-links a.unav-cta:hover{background-color:#d4b862;color:#0a1628}
