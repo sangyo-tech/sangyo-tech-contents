@@ -463,26 +463,33 @@ a { color: inherit; text-decoration: none; }
 </style>
 </head>
 <body>
+<!-- RELEASE BANNER -->
+<div id="release-banner" style="background:#c9a961;color:#0a0a0a;text-align:center;padding:0.6rem 1rem;font-size:0.9rem;font-weight:700;letter-spacing:0.05em;position:sticky;top:0;z-index:99999;">
+  🚀  リリース直前にき4月末まで全て公開中！ 
+  <span style="background:#0a0a0a;color:#c9a961;padding:0.15rem 0.6rem;border-radius:3px;font-size:0.8rem;margin-left:0.4rem;">5/1 正式リリース</span>
+</div>
 
 <!-- ナビバー -->
 <nav class="unav" role="navigation" aria-label="メインナビゲーション">
-  <a href="https://sangyo-tech.jp/" class="unav-brand" aria-label="産業技術アカデミー">
-    <div>
-      <div class="unav-brand-en">Industrial Technology Academy</div>
-      <div class="unav-brand-ja">産業技術アカデミー</div>
+    <a href="https://sangyo-tech.jp/" class="unav-brand" aria-label="産業技術アカデミー">
+      <div>
+        <div class="unav-brand-en">Industrial Technology Academy</div>
+        <div class="unav-brand-ja">産業技術アカデミー</div>
+      </div>
+    </a>
+    <button class="unav-toggle" onclick="document.getElementById('unavLinks').classList.toggle('unav-open')" aria-label="メニュー">☰</button>
+    <div class="unav-links" id="unavLinks">
+      <a href="https://sangyo-tech.jp/">TOP</a>
+      <a href="https://course.sangyo-tech.jp/">コース</a>
+      <a href="https://contents.sangyo-tech.jp/" class="unav-active">コンテンツ一覧</a>
+      <a href="https://pricing.sangyo-tech.jp/">料金</a>
+      <a href="https://service.sangyo-tech.jp/">支援サービス</a>
+      <a href="https://sangyo-tech.jp/news/">規制ニュース</a>
+      <a href="https://note.sangyo-tech.jp/">耳より情報</a>
+      <a href="https://about-us.sangyo-tech.jp/">私たちについて</a>
+      <a href="https://apply.sangyo-tech.jp/" class="unav-cta">お申込み</a>
     </div>
-  </a>
-  <button class="unav-toggle" onclick="document.getElementById('unavLinks').classList.toggle('unav-open')" aria-label="メニュー">☰</button>
-  <div class="unav-links" id="unavLinks">
-    <a href="https://sangyo-tech.jp/">TOP</a>
-    <a href="https://course.sangyo-tech.jp/" class="unav-active">コース</a>
-    <a href="https://pricing.sangyo-tech.jp/">料金</a>
-    <a href="https://service.sangyo-tech.jp/">支援サービス</a>
-    <a href="https://sangyo-tech.jp/news/">規制ニュース</a>
-    <a href="https://about-us.sangyo-tech.jp/">私たちについて</a>
-    <a href="https://apply.sangyo-tech.jp/" class="unav-cta">お申込み</a>
-  </div>
-</nav>
+  </nav>
 
 <!-- ヒーロー -->
 <section class="hero">
