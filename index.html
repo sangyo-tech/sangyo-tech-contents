@@ -2304,5 +2304,100 @@ function toggleAccordion(button) {
     </div>
 <div class="course-grid">
     
+
+<style id="card-unified-design">
+  .course-card { display: flex !important; flex-direction: column !important; }
+  .course-card .card-actions { margin-top: auto !important; display: flex; flex-direction: column; gap: 8px; padding-top: 12px; }
+  .course-card .view-btn { display:block; padding:12px; background:linear-gradient(135deg,#fbbf24,#f59e0b); color:#0a1628 !important; text-align:center; font-weight:700; border-radius:8px; text-decoration:none; font-size:14px; transition:all 0.2s; }
+  .course-card .view-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(251,191,36,0.4); }
+</style>
+<script id="card-view-button-injector">
+(function(){
+  const map = {
+    '汎用品質研修': '',
+    '健康食品GMP': 'kenko-gmp.html',
+    '中小企業向け品質部門立ち上げ': 'smb-dept.html',
+    'マニュアル作成実務': 'manual.html',
+    'ISO22716 化粧品GMP': 'iso22716.html',
+    'ISO22716 化粧品GMPコース': 'iso22716.html',
+    'ISO9001 品質マネジメント': 'iso9001.html',
+    'ISO14001 環境マネジメント': 'iso14001.html',
+    'HACCP 食品衛生管理': 'haccp.html',
+    'HACCP 食品衛生管理コース': 'haccp.html',
+    'ISO22000 食品安全マネジメント': 'iso22000.html',
+    'ISO22000 食品安全マネジメントコース': 'iso22000.html',
+    'IATF16949 自動車産業品質': 'iso16949.html',
+    'ISO13485 医療機器品質': 'iso13485.html',
+    '医療機器GMP（QMS省令）': 'qms.html',
+    '医療機器GMP（QMS省令）コース': 'qms.html',
+    'GVP 製造販売後安全管理': 'gvp.html',
+    'GVP 製造販売後安全管理コース': 'gvp.html',
+    '薬機法': 'yakkihou.html',
+    '薬機法コース': 'yakkihou.html',
+    'ISO22002 食品安全前提条件': 'iso22002.html',
+    'GQP省令 品質管理基準': 'gqp.html',
+    'GQP 品質管理基準省令コース': 'gqp.html',
+    '食品表示法・景品表示法': '',
+    '包装資材・段ボール品質管理': '',
+    '印刷・インク品質管理': '',
+    'QC検定3級対策': 'qc3.html',
+    'QC検定2級対策': 'qc2.html',
+    '音声コンテンツ（聞き流し学習）': 'audio-index.html',
+    '新人のための品質ラジオ': 'audio-index.html',
+    '食品業界向けコース': 'industry-food.html',
+    '化粧品業界向けコース': 'industry-cosmetics.html',
+    '医療機器業界向けコース': 'industry-medical.html',
+    '自動車業界向けコース': 'industry-auto.html',
+    'QC七つ道具コース': 'theme-qc7.html',
+    '統計・データ分析コース': 'theme-stats.html',
+    '検査・計測コース': 'theme-inspection.html',
+    '品質マネジメントシステムコース': 'theme-qms.html',
+    'FMEA・源流管理コース': 'theme-fmea.html',
+    '変更管理・4M管理コース': 'theme-4m.html',
+    'クレーム対応・是正処置コース': 'theme-claim.html',
+    'サプライヤ品質管理コース': 'theme-supplier.html',
+    '品質コスト・KPI管理コース': 'theme-kpi.html',
+    'リスクマネジメントコース': 'theme-risk.html',
+    '標準化コース': 'theme-standard.html',
+    'トヨタ生産方式コース': 'theme-tps.html',
+    'DX・データ活用コース': 'theme-dx.html',
+    '30日入門パック': 'pack-30days.html',
+    '90日基礎マスターパック': 'pack-90days.html',
+    '1年完全コース': 'pack-1year.html',
+    'FMEA集中コース': 'short-fmea.html',
+    '4M変化点管理コース': 'short-4m.html',
+    'クレーム対応速習コース': 'short-claim.html',
+    '品質コスト一日完結コース': 'short-kpi.html',
+    '監査対応速習コース': 'short-audit.html'
+  };
+  function inject(){
+    document.querySelectorAll('.course-card').forEach(card => {
+      if (card.querySelector('.view-btn')) return;
+      const titleEl = card.querySelector('.card-title');
+      if (!titleEl) return;
+      const title = titleEl.textContent.trim();
+      const wrapper = map[title];
+      if (wrapper === undefined) return;
+      const url = 'https://course.sangyo-tech.jp/' + wrapper;
+      const toggle = card.querySelector('.accordion-toggle');
+      const accordionContent = card.querySelector('.accordion-content');
+      const actions = document.createElement('div');
+      actions.className = 'card-actions';
+      const btn = document.createElement('a');
+      btn.className = 'view-btn';
+      btn.href = url;
+      btn.target = '_blank';
+      btn.rel = 'noopener';
+      btn.textContent = '🎬 視聴する →';
+      actions.appendChild(btn);
+      if (toggle) actions.appendChild(toggle);
+      if (accordionContent) card.insertBefore(actions, accordionContent);
+      else card.appendChild(actions);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inject);
+  else inject();
+})();
+</script>
 </body>
 </html>
