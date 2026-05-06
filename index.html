@@ -10,7 +10,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ItemList","name":"コンテンツ一覧","url":"https://contents.sangyo-tech.jp/","inLanguage":"ja","publisher":{"@type":"EducationalOrganization","name":"産業技術アカデミー","url":"https://sangyo-tech.jp/"}}
 </script>
-<meta name="description" content="産業技術アカデミーの全コンテンツ一覧（現在動画194本＋音声200本＝計394本以上を配信中、2026年内に500本へ拡充予定）。品質管理、ISO、GMP、製造技術、マネジメントなど、製造業に必要な知識を体系的に学べるeラーニングコースをご紹介します。">
+<meta name="description" content="産業技術アカデミーの全コンテンツ一覧（現在動画174本＋音声200本＝計374本を配信中）。品質管理、ISO、GMP、製造技術、マネジメントなど、製造業に必要な知識を体系的に学べるeラーニングコースをご紹介します。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -42,11 +42,445 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 
+/* ===== ヒーロー ===== */
+.hero {
+    padding: 80px 24px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+.hero-label {
+    font-size: 14px;
+    letter-spacing: .2em;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+}
+.hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+.hero p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* ===== 統計バー ===== */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+.stat-item {
+    text-align: center;
+}
+.stat-num {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    line-height: 1;
+}
+.stat-num span { font-size: 18px; }
+.stat-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* ===== セクションヘッダ ===== */
+.section-header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 24px;
+}
+.section-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-header h2 .badge {
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.badge-live { background: var(--accent-green); color: #000; }
+.badge-wip { background: var(--accent-orange); color: #000; }
+.badge-planned { background: var(--accent-blue); color: #fff; }
+.badge-soon { background: var(--accent-purple); color: #fff; }
+
+/* ===== コースグリッド ===== */
+.course-grid {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+.course-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    transition: all .25s;
+    position: relative;
+    overflow: hidden;
+}
+.course-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+}
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+.card-icon {
+    font-size: 28px;
+    line-height: 1;
+}
+.card-status {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+.status-live { background: rgba(34,197,94,.15); color: var(--accent-green); }
+.status-wip { background: rgba(245,158,11,.15); color: var(--accent-orange); }
+.status-script { background: rgba(59,130,246,.15); color: var(--accent-blue); }
+.status-planned { background: rgba(168,85,247,.15); color: var(--accent-purple); }
+
+.card-title {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+.card-industry {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+.card-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+.card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.progress-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-top: 14px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width .4s;
+}
+
+/* ===== アコーディオン ===== */
+.accordion-toggle {
+    background: none;
+    border: none;
+    color: var(--accent-blue);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 0;
+    margin-top: 12px;
+    width: 100%;
+    text-align: left;
+    transition: opacity .2s;
+}
+.accordion-toggle:hover {
+    opacity: 0.8;
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.accordion-content.open {
+    max-height: 1500px;
+    transition: max-height 0.5s ease-in;
+}
+.accordion-list {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.accordion-list li {
+    padding: 2px 0;
+}
+.accordion-level-header {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.accordion-level-header:first-of-type {
+    margin-top: 0;
+}
+
+/* ===== マトリックス ===== */
+.matrix-section {
+    max-width: 1100px;
+    margin: 0 auto 64px;
+    padding: 0 24px;
+}
+.matrix-section h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.matrix-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    min-width: 600px;
+}
+.matrix-table th {
+    background: var(--bg-accent);
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+.matrix-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+.matrix-table tr:last-child td { border-bottom: none; }
+.matrix-table tr:hover td { background: rgba(255,255,255,.02); }
+.matrix-course-name {
+    font-weight: 600;
+    white-space: nowrap;
+}
+.matrix-industry {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+.dot-live { color: var(--accent-green); }
+.dot-wip { color: var(--accent-orange); }
+.dot-script { color: var(--accent-blue); }
+.dot-planned { color: var(--text-muted); }
+.matrix-count {
+    font-weight: 600;
+    text-align: center;
+}
+.matrix-status-badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+/* ===== 凡例 ===== */
+.legend {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+/* ===== レベル別セクション ===== */
+.level-section {
+    max-width: 1100px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+}
+.level-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+.level-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+.level-card .lv-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.level-card .lv-count {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.level-card .lv-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* ===== フッター ===== */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.footer a { color: var(--accent-gold); }
+
+/* ===== ナビバー モバイル ===== */
+@media (max-width:768px){.unav-links{display:none;position:absolute;top:60px;left:0;right:0;background-color:#060d1a;border-bottom:1px solid #1a2a4a;flex-direction:column;align-items:stretch;padding:12px 16px;gap:4px}.unav-links.unav-open{display:flex}.unav-links a{text-align:left}.unav-links a.unav-cta{margin-left:0;text-align:center}.unav-toggle{display:block}}
+
+/* ===== タブレット (768px〜1024px) ===== */
+@media (max-width: 1024px) {
+    .hero { padding: 60px 20px 40px; }
+    .hero h1 { font-size: clamp(26px, 4.5vw, 38px); }
+    .hero p { font-size: 16px; }
+    .stats-bar { gap: 32px; padding: 28px 20px; }
+    .stat-num { font-size: 36px; }
+    .stat-label { font-size: 13px; }
+    .course-grid { padding: 0 20px; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+    .section-header { padding: 0 20px 20px; }
+    .section-header h2 { font-size: 23px; }
+    .matrix-section { padding: 0 20px; }
+    .level-section { padding: 0 20px; }
+    .legend { padding: 0 20px; }
+    .unav-links { gap: 16px; font-size: 14px; }
+}
+
+/* ===== スマホ (768px以下) ===== */
+@media (max-width: 768px) {
+
+    .hero { padding: 48px 16px 36px; }
+    .hero-label { font-size: 12px; }
+    .hero h1 { font-size: 26px; line-height: 1.5; }
+    .hero p { font-size: 15px; max-width: 100%; }
+
+    .stats-bar { gap: 20px; padding: 24px 16px; margin: 0 auto 40px; }
+    .stat-num { font-size: 32px; }
+    .stat-num span { font-size: 14px; }
+    .stat-label { font-size: 12px; }
+
+    .section-header { padding: 0 16px 16px; }
+    .section-header h2 { font-size: 20px; }
+    .section-header h2 .badge { font-size: 11px; padding: 3px 8px; }
+
+    .course-grid { padding: 0 16px; grid-template-columns: 1fr; gap: 12px; margin: 0 auto 40px; }
+    .course-card { padding: 20px; }
+    .card-title { font-size: 17px; }
+    .card-industry { font-size: 12px; }
+    .card-meta { font-size: 13px; }
+    .card-icon { font-size: 24px; }
+
+    .accordion-toggle { font-size: 13px; }
+    .accordion-list { font-size: 12px; }
+    .accordion-level-header { font-size: 12px; }
+
+    .matrix-section { padding: 0 16px; margin: 0 auto 40px; }
+    .matrix-section h2 { font-size: 20px; }
+    .matrix-table { font-size: 13px; }
+    .matrix-table th { font-size: 12px; padding: 10px 10px; }
+    .matrix-table td { padding: 8px 10px; }
+
+    .legend { padding: 0 16px; font-size: 13px; gap: 16px; }
+    .level-section { padding: 0 16px; }
+    .level-cards { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+    .level-card { padding: 16px; }
+    .level-card .lv-name { font-size: 14px; }
+    .level-card .lv-count { font-size: 28px; }
+    .level-card .lv-sub { font-size: 11px; }
+
+    .footer { padding: 32px 16px; font-size: 13px; }
+}
+</style>
+<style id="unav-fit-override">
+@media(min-width:769px){
+.unav-links{gap:2px!important}
+.unav-links a{padding:6px 8px!important;font-size:.78rem!important}
+.unav-links a.unav-cta{padding:6px 14px!important}
+}
 </style>
 <style id="unav-static-styles">
 html,body{margin:0}.unav{background-color:#060d1a!important;border-bottom:1px solid #1a2a4a!important;padding:0 24px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;height:60px!important;position:sticky!important;top:0!important;z-index:9000!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif!important;box-sizing:border-box!important}.unav *{box-sizing:border-box!important}.unav-brand{display:flex!important;align-items:center!important;text-decoration:none!important;min-width:220px!important}.unav-brand-en{font-size:.6rem!important;color:#808a9a!important;letter-spacing:1.5px!important;text-transform:uppercase!important;line-height:1!important;font-weight:400!important}.unav-brand-ja{font-size:.95rem!important;color:#c8a84e!important;font-weight:700!important;line-height:1!important;letter-spacing:.05em!important;margin-top:4px!important}.unav-links{display:flex!important;align-items:center!important;gap:4px!important}.unav-links a{position:static!important;color:#d7deec!important;text-decoration:none!important;font-size:.85rem!important;padding:8px 14px!important;border-radius:6px!important;transition:background-color .18s ease,color .18s ease!important;white-space:nowrap!important;font-weight:600!important;background:none!important;border:0!important;line-height:1.5!important;box-shadow:none!important;transform:none!important}.unav-links a::before,.unav-links a::after{content:none!important;display:none!important}.unav-links a:hover{color:#fff!important;background-color:rgba(255,255,255,.07)!important;transform:none!important}.unav-links a.unav-cta{color:#0a1628!important;background-color:#c8a84e!important;font-weight:700!important;border-radius:20px!important;padding:8px 18px!important;margin-left:4px!important}.unav-links a.unav-cta:hover{background-color:#d4b862!important;color:#0a1628!important}.unav-toggle{display:none!important;position:relative!important;background:none!important;border:none!important;color:#c8a84e!important;font-size:0!important;cursor:pointer!important;padding:4px!important;min-width:44px!important;min-height:44px!important}.unav-toggle::before{content:""!important;position:absolute!important;left:11px!important;top:14px!important;width:22px!important;height:2px!important;background:#c8a84e!important;border-radius:2px!important;box-shadow:0 7px 0 #c8a84e,0 14px 0 #c8a84e!important}.strip{height:3px!important;background:linear-gradient(90deg,#1a6fbf,#0ea5c8,#c8921a)!important;width:100%!important;display:block!important;margin:0!important;padding:0!important;border:none!important}@media(max-width:1240px){.unav-links{display:none!important;position:absolute!important;top:60px!important;left:0!important;right:0!important;background-color:#060d1a!important;border-bottom:1px solid #1a2a4a!important;flex-direction:column!important;align-items:stretch!important;padding:12px 16px!important;gap:4px!important;z-index:8999!important}.unav-links.unav-open{display:flex!important}.unav-links a{text-align:left!important;white-space:normal!important}.unav-links a.unav-cta{margin-left:0!important;text-align:center!important}.unav-toggle{display:block!important}.unav-brand{min-width:0!important}}
 </style></head>
-<body><nav class="unav" role="navigation" aria-label="メインナビゲーション"><a href="https://sangyo-tech.jp/" class="unav-brand" aria-label="産業技術アカデミー"><div><div class="unav-brand-en">INDUSTRIAL TECHNOLOGY ACADEMY</div><div class="unav-brand-ja">産業技術アカデミー</div></div></a><button class="unav-toggle" type="button" aria-label="メニュー"></button><div class="unav-links" id="unavLinks"><a href="https://sangyo-tech.jp/">TOP</a><a href="https://course.sangyo-tech.jp/">コース</a><a href="https://contents.sangyo-tech.jp/">コンテンツ一覧</a><a href="https://pricing.sangyo-tech.jp/">料金</a><a href="https://service.sangyo-tech.jp/">支援サービス</a><a href="https://sangyo-tech.jp/news/">法規制情報</a><a href="https://note.sangyo-tech.jp/">耳より情報</a><a href="https://about-us.sangyo-tech.jp/">私たちについて</a><a href="https://service.sangyo-tech.jp/">教育機関向け</a><a href="https://apply.sangyo-tech.jp/" class="unav-cta">お申込み</a></div></nav><div class="strip"></div>
+<body>
+
+<!-- ナビバー -->
+<nav class="unav" role="navigation" aria-label="メインナビゲーション">
+    <a href="https://sangyo-tech.jp/" class="unav-brand" aria-label="産業技術アカデミー">
+      <div>
+        <div class="unav-brand-en">Industrial Technology Academy</div>
+        <div class="unav-brand-ja">産業技術アカデミー</div>
+      </div>
+    </a>
+    <button class="unav-toggle" onclick="document.getElementById('unavLinks').classList.toggle('unav-open')" aria-label="メニュー">☰</button>
+    <div class="unav-links" id="unavLinks">
+      <a href="https://sangyo-tech.jp/">TOP</a>
+      <a href="https://course.sangyo-tech.jp/">コース</a>
+      <a href="https://contents.sangyo-tech.jp/" class="unav-active">コンテンツ一覧</a>
+      <a href="https://pricing.sangyo-tech.jp/">料金</a>
+      <a href="https://service.sangyo-tech.jp/">支援サービス</a>
+      <a href="https://sangyo-tech.jp/news/">法規制情報</a>
+      <a href="https://note.sangyo-tech.jp/">耳より情報</a>
+      <a href="https://about-us.sangyo-tech.jp/">私たちについて</a>
+    </div>
+  </nav>
 
 <!-- ヒーロー -->
 <section class="hero">
@@ -80,7 +514,7 @@ html,body{margin:0}.unav{background-color:#060d1a!important;border-bottom:1px so
     <div class="legend-item"><div class="legend-dot" style="background:var(--accent-green)"></div>配信中</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--accent-orange)"></div>制作中</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--accent-blue)"></div>台本完了（近日配信）</div>
-    <div class="legend-item"><div class="legend-dot" style="background:var(--accent-purple)"></div>準備中</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--accent-purple)"></div>追加予定</div>
 </div>
 
 <!-- ===== 配信中のコース ===== -->
@@ -745,7 +1179,7 @@ html,body{margin:0}.unav{background-color:#060d1a!important;border-bottom:1px so
     </div>
 </div>
 
-<!-- ===== 準備中 ===== -->
+<!-- ===== 追加予定 ===== -->
 <div class="section-header">
     <h2><span class="badge badge-planned">台本完了</span> 業界特化コンテンツ（近日配信）</h2>
 </div>
@@ -821,17 +1255,17 @@ html,body{margin:0}.unav{background-color:#060d1a!important;border-bottom:1px so
 </div>
 
 <div class="section-header">
-    <h2><span class="badge badge-soon">準備中</span> 今後リリース予定</h2>
+    <h2><span class="badge badge-soon">追加予定</span> 今後リリース予定</h2>
 </div>
 <div class="course-grid">
     <div class="course-card">
-        <div class="card-top"><div class="card-icon">📖</div><div class="card-status status-planned">準備中</div></div>
+        <div class="card-top"><div class="card-icon">📖</div><div class="card-status status-planned">追加予定</div></div>
         <div class="card-title">QC検定3級対策</div>
         <div class="card-industry">全業界共通｜資格対策</div>
         <div class="card-meta"><span>企画段階</span></div>
     </div>
     <div class="course-card">
-        <div class="card-top"><div class="card-icon">📖</div><div class="card-status status-planned">準備中</div></div>
+        <div class="card-top"><div class="card-icon">📖</div><div class="card-status status-planned">追加予定</div></div>
         <div class="card-title">QC検定2級対策</div>
         <div class="card-industry">全業界共通｜資格対策</div>
         <div class="card-meta"><span>企画段階</span></div>
@@ -970,13 +1404,13 @@ html,body{margin:0}.unav{background-color:#060d1a!important;border-bottom:1px so
                     <td class="matrix-course-name">QC検定3級対策</td>
                     <td class="matrix-industry">全業界共通</td>
                     <td class="matrix-count">—</td>
-                    <td><span class="status-dot" style="background:var(--accent-purple)"></span>準備中</td>
+                    <td><span class="status-dot" style="background:var(--accent-purple)"></span>追加予定</td>
                 </tr>
                 <tr>
                     <td class="matrix-course-name">QC検定2級対策</td>
                     <td class="matrix-industry">全業界共通</td>
                     <td class="matrix-count">—</td>
-                    <td><span class="status-dot" style="background:var(--accent-purple)"></span>準備中</td>
+                    <td><span class="status-dot" style="background:var(--accent-purple)"></span>追加予定</td>
                 </tr>
             </tbody>
         </table>
@@ -1044,7 +1478,7 @@ function toggleAccordion(button) {
     }
 }
 </script>
-
+<script src="https://sangyo-tech.jp/unav.js?v=11" defer></script>
 
 
     <div class="course-card">
@@ -1960,5 +2394,5 @@ function toggleAccordion(button) {
   else inject();
 })();
 </script>
-<script src="https://sangyo-tech.jp/unav.js?v=11" defer></script></body>
+</body>
 </html>
