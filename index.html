@@ -458,7 +458,21 @@ a { color: inherit; text-decoration: none; }
 </style>
 <style id="unav-static-styles">
 html,body{margin:0}.unav{background-color:#060d1a!important;border-bottom:1px solid #1a2a4a!important;padding:0 18px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;height:60px!important;position:sticky!important;top:0!important;z-index:9000!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic Medium","Meiryo",sans-serif!important;box-sizing:border-box!important}.unav *{box-sizing:border-box!important}.unav-brand{display:flex!important;align-items:center!important;text-decoration:none!important;min-width:190px!important}.unav-brand-en{font-size:.6rem!important;color:#808a9a!important;letter-spacing:1.5px!important;text-transform:uppercase!important;line-height:1!important;font-weight:400!important}.unav-brand-ja{font-size:.95rem!important;color:#c8a84e!important;font-weight:700!important;line-height:1!important;letter-spacing:.05em!important;margin-top:4px!important}.unav-links{display:flex!important;align-items:center!important;gap:2px!important}.unav-links a{position:static!important;color:#d7deec!important;text-decoration:none!important;font-size:.82rem!important;padding:8px 9px!important;border-radius:6px!important;transition:background-color .18s ease,color .18s ease!important;white-space:nowrap!important;font-weight:600!important;background:none!important;border:0!important;line-height:1.5!important;box-shadow:none!important;transform:none!important}.unav-links a::before,.unav-links a::after{content:none!important;display:none!important}.unav-links a:hover{color:#fff!important;background-color:rgba(255,255,255,.07)!important;transform:none!important}.unav-links a.unav-cta{color:#0a1628!important;background-color:#c8a84e!important;font-weight:700!important;border-radius:20px!important;padding:8px 14px!important;margin-left:3px!important}.unav-links a.unav-cta:hover{background-color:#d4b862!important;color:#0a1628!important}.unav-toggle{display:none!important;position:relative!important;background:none!important;border:none!important;color:#c8a84e!important;font-size:0!important;cursor:pointer!important;padding:4px!important;min-width:44px!important;min-height:44px!important}.unav-toggle::before{content:""!important;position:absolute!important;left:11px!important;top:14px!important;width:22px!important;height:2px!important;background:#c8a84e!important;border-radius:2px!important;box-shadow:0 7px 0 #c8a84e,0 14px 0 #c8a84e!important}.strip{height:3px!important;background:linear-gradient(90deg,#1a6fbf,#0ea5c8,#c8921a)!important;width:100%!important;display:block!important;margin:0!important;padding:0!important;border:none!important}@media(max-width:1240px){.unav-links{display:none!important;position:absolute!important;top:60px!important;left:0!important;right:0!important;background-color:#060d1a!important;border-bottom:1px solid #1a2a4a!important;flex-direction:column!important;align-items:stretch!important;padding:12px 16px!important;gap:2px!important;z-index:8999!important}.unav-links.unav-open{display:flex!important}.unav-links a{text-align:left!important;white-space:normal!important}.unav-links a.unav-cta{margin-left:0!important;text-align:center!important}.unav-toggle{display:block!important}.unav-brand{min-width:0!important}}
-</style></head>
+</style><style id="sangyo-dynamic-style">
+@media (prefers-reduced-motion:no-preference){
+  [data-dynamic-reveal]{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease,box-shadow .25s ease,border-color .25s ease;background-position .35s ease;transition-delay:var(--reveal-delay,0ms)}
+  [data-dynamic-reveal].is-visible{opacity:1;transform:translateY(0)}
+  .hero-showcase,.course-card,.hero-stat,.price-card,.link-card,.about-card,.tool-card,.article-card,.vol-card{will-change:transform}
+  .hero-showcase.dynamic-tilt{transform:perspective(1200px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .18s ease}
+  .hero-stat,.course-card,.price-card,.link-card,.about-card,.tool-card,.article-card{background-size:160% 160%}
+  .hero-stat:hover,.course-card:hover,.price-card:hover,.link-card:hover,.about-card:hover,.tool-card:hover,.article-card:hover{box-shadow:0 18px 48px rgba(0,0,0,.22),0 0 0 1px rgba(125,216,245,.16);border-color:rgba(125,216,245,.32)!important}
+}
+.dynamic-control-panel{width:min(1120px,calc(100% - 40px));margin:28px auto 18px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px;border:1px solid rgba(125,216,245,.18);background:rgba(8,18,36,.72);border-radius:10px;backdrop-filter:blur(12px)}
+.dynamic-search{min-width:min(420px,100%);flex:1;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;border-radius:8px;padding:12px 14px;font:600 14px/1.5 inherit;outline:none}.dynamic-search::placeholder{color:rgba(215,222,236,.58)}.dynamic-search:focus{border-color:#7dd8f5;box-shadow:0 0 0 3px rgba(125,216,245,.14)}
+.dynamic-filter-group{display:flex;gap:8px;flex-wrap:wrap}.dynamic-filter-btn{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#d7deec;border-radius:999px;padding:9px 12px;font:700 12px/1 inherit;cursor:pointer}.dynamic-filter-btn.is-active{background:#d4a017;color:#07111f;border-color:#d4a017}.dynamic-result-count{font-size:12px;color:#8fa4c7;font-weight:700;white-space:nowrap}.dynamic-hidden{display:none!important}
+@media(max-width:760px){.dynamic-control-panel{width:calc(100% - 28px);align-items:stretch}.dynamic-search{min-width:100%}.dynamic-filter-group{width:100%}.dynamic-filter-btn{flex:1 1 auto}.dynamic-result-count{width:100%}}
+</style>
+</head>
 <body>
 
 <!-- ナビバー -->
@@ -2377,5 +2391,96 @@ function toggleAccordion(button) {
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"48cf262eceec4bb7a1f5a3e965b2883b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script id="sangyo-dynamic-script">
+(function(){
+  function ready(fn){ if(document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function(){
+    document.documentElement.classList.add('site-dynamic');
+    var revealTargets = document.querySelectorAll('section,.hero-copy,.hero-showcase,.hero-stat,.course-card,.price-card,.link-card,.about-card,.tool-card,.article-card,.vol-card,.quick-card,.story-chapter,.story-principle');
+    revealTargets.forEach(function(el,i){ if(!el.hasAttribute('data-dynamic-reveal')){ el.setAttribute('data-dynamic-reveal',''); el.style.setProperty('--reveal-delay', Math.min((i%8)*45, 260)+'ms'); } });
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); } }); }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+      revealTargets.forEach(function(el){ io.observe(el); });
+    } else { revealTargets.forEach(function(el){ el.classList.add('is-visible'); }); }
+
+    var tilt = document.querySelector('.hero-showcase');
+    if(tilt && window.matchMedia('(pointer:fine)').matches){
+      tilt.classList.add('dynamic-tilt');
+      tilt.addEventListener('mousemove', function(e){
+        var r = tilt.getBoundingClientRect();
+        var x = ((e.clientX - r.left) / r.width - .5) * 5;
+        var y = ((e.clientY - r.top) / r.height - .5) * -5;
+        tilt.style.setProperty('--tilt-x', y.toFixed(2)+'deg');
+        tilt.style.setProperty('--tilt-y', x.toFixed(2)+'deg');
+      });
+      tilt.addEventListener('mouseleave', function(){ tilt.style.setProperty('--tilt-x','0deg'); tilt.style.setProperty('--tilt-y','0deg'); });
+    }
+
+    enhanceContents();
+    enhanceCourse();
+  });
+
+  function enhanceContents(){
+    if(!location.hostname.startsWith('contents.')) return;
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.course-card'));
+    if(!cards.length || document.querySelector('.dynamic-control-panel')) return;
+    cards.forEach(function(card){
+      var text = card.textContent;
+      var status = text.indexOf('追加予定') >= 0 ? 'planned' : (text.indexOf('制作中') >= 0 || text.indexOf('準備中') >= 0 ? 'wip' : 'live');
+      card.setAttribute('data-dynamic-status', status);
+    });
+    var panel = document.createElement('div');
+    panel.className = 'dynamic-control-panel';
+    panel.innerHTML = '<input class="dynamic-search" type="search" placeholder="コンテンツ名・業界・キーワードで検索"><div class="dynamic-filter-group"><button class="dynamic-filter-btn is-active" data-status="all">すべて</button><button class="dynamic-filter-btn" data-status="live">配信中</button><button class="dynamic-filter-btn" data-status="wip">制作中</button><button class="dynamic-filter-btn" data-status="planned">追加予定</button></div><div class="dynamic-result-count" aria-live="polite"></div>';
+    var anchor = document.querySelector('.legend') || document.querySelector('main') || document.body;
+    anchor.parentNode.insertBefore(panel, anchor.nextSibling);
+    var input = panel.querySelector('.dynamic-search');
+    var buttons = Array.prototype.slice.call(panel.querySelectorAll('.dynamic-filter-btn'));
+    var count = panel.querySelector('.dynamic-result-count');
+    var status = 'all';
+    function apply(){
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      cards.forEach(function(card){
+        var okStatus = status === 'all' || card.getAttribute('data-dynamic-status') === status;
+        var okText = !q || card.textContent.toLowerCase().indexOf(q) >= 0;
+        var show = okStatus && okText;
+        card.classList.toggle('dynamic-hidden', !show);
+        if(show) shown++;
+      });
+      count.textContent = shown + '件表示 / ' + cards.length + '件';
+    }
+    input.addEventListener('input', apply);
+    buttons.forEach(function(btn){ btn.addEventListener('click', function(){ status = btn.getAttribute('data-status'); buttons.forEach(function(b){ b.classList.toggle('is-active', b === btn); }); apply(); }); });
+    apply();
+  }
+
+  function enhanceCourse(){
+    if(!location.hostname.startsWith('course.')) return;
+    var tabs = document.querySelector('.mode-tabs');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.course-card'));
+    if(!tabs || !cards.length || document.querySelector('.dynamic-control-panel')) return;
+    var panel = document.createElement('div');
+    panel.className = 'dynamic-control-panel';
+    panel.innerHTML = '<input class="dynamic-search" type="search" placeholder="コース名・職種・目的で検索"><div class="dynamic-result-count" aria-live="polite"></div>';
+    tabs.parentNode.insertBefore(panel, tabs.nextSibling);
+    var input = panel.querySelector('.dynamic-search');
+    var count = panel.querySelector('.dynamic-result-count');
+    function apply(){
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      cards.forEach(function(card){
+        var show = !q || card.textContent.toLowerCase().indexOf(q) >= 0;
+        card.classList.toggle('dynamic-hidden', !show);
+        if(show) shown++;
+      });
+      count.textContent = q ? shown + '件表示' : '検索できます';
+    }
+    input.addEventListener('input', apply);
+    document.addEventListener('click', function(e){ if(e.target.closest('.tab-btn')) setTimeout(apply, 80); });
+    apply();
+  }
+})();
+</script>
 </body>
 </html>
