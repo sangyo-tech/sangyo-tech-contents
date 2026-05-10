@@ -2539,10 +2539,6 @@
   var ALL=String.fromCharCode(0x3059,0x3079,0x3066);
   var KEN=String.fromCharCode(0x4ef6);
   var DISPLAY=String.fromCharCode(0x8868,0x793a);
-  var toggle=document.querySelector('.unav-toggle');
-  var links=document.querySelector('.unav-links');
-  if(toggle&&links)toggle.addEventListener('click',function(){links.classList.toggle('unav-open')});
-
   var cards=Array.prototype.slice.call(document.querySelectorAll('.content-card'));
   var input=document.querySelector('.content-search');
   var count=document.querySelector('.result-count');
@@ -2587,4 +2583,5 @@
   if(input)input.addEventListener('input',apply);
   apply();
 })();</script>
-<script src="https://sangyo-tech.jp/unav.js?v=31" defer></script></body></html>
+<script src="https://sangyo-tech.jp/unav.js?v=32" defer></script></body></html>
+
