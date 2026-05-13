@@ -6,4 +6,9 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://contents.sangyo-tech.jp/llms/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
