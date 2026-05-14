@@ -1,25 +1,15 @@
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
-Sitemap: https://contents.sangyo-tech.jp/sitemap.xml
-
-User-agent: GPTBot
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: CCBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
+Sitemap: https://contents.sangyo-tech.jp/sitemap.xml
+Sitemap: https://sangyo-tech.jp/sitemap.xml
