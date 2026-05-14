@@ -13,8 +13,7 @@ ENDPOINT = "https://api.indexnow.org/indexnow"
 URLS = [
     "https://contents.sangyo-tech.jp/",
     "https://contents.sangyo-tech.jp/sitemap.xml",
-    "https://contents.sangyo-tech.jp/robots.txt",
-    "https://contents.sangyo-tech.jp/llms.txt",
+        "https://contents.sangyo-tech.jp/llms/",
 ]
 
 
