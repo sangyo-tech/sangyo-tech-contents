@@ -97,6 +97,23 @@ body :is(.chip,.tag,.badge,.role-badge,.filter-chip,.industry-chip){
   border-color:rgba(125,216,245,.42)!important;
   color:#dff7ff!important;
 }
+.filter-chip.is-active,
+.industry-chip.is-active{
+  background:linear-gradient(135deg,#ffdc66 0%,#f5b52f 100%)!important;
+  border-color:#fff2a8!important;
+  color:#06101d!important;
+  box-shadow:0 0 0 2px rgba(255,255,255,.55),0 10px 24px rgba(245,181,47,.34)!important;
+}
+.filter-chip.is-active span,
+.industry-chip.is-active span{
+  color:#06101d!important;
+  opacity:.82!important;
+}
+.filter-chip:focus-visible,
+.industry-chip:focus-visible{
+  outline:3px solid rgba(255,242,168,.92)!important;
+  outline-offset:3px!important;
+}
 body :is(a,.btn,.button,.cta-btn,.svc-btn,.quick-btn){
   transition:transform .16s ease,box-shadow .16s ease,background .16s ease!important;
 }
