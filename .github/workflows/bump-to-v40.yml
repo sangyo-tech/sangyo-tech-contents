@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Replace v38 v39 v34 with v40
+      - name: Replace all unav versions with v40
         run: |
-          find . -name '*.html' -exec sed -i 's|unav\.js?v=3[489]|unav.js?v=40|g' {} +
+          find . -name '*.html' -exec sed -i 's|unav\.js?v=[0-9]\+|unav.js?v=40|g' {} +
       - name: Commit changes
         run: |
           git config user.name "sangyo-tech"
