@@ -1,6 +1,9 @@
 name: Bump unav.js version to v40
 on: workflow_dispatch
 
+permissions:
+  contents: write
+
 jobs:
   bump:
     runs-on: ubuntu-latest
@@ -8,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Replace v38 v39 v34 with v40
         run: |
-          find . -name '*.html' -exec sed -i 's|unav\\.js?v=3[489]|unav.js?v=40|g' {} +
+          find . -name '*.html' -exec sed -i 's|unav\.js?v=3[489]|unav.js?v=40|g' {} +
       - name: Commit changes
         run: |
           git config user.name "sangyo-tech"
