@@ -1,0 +1,79 @@
+name: Add AIO metadata
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply fixes
+        run: |
+          python3 << 'PYEOF'
+          import json
+
+          with open('index.html', 'r', encoding='utf-8') as f:
+              t = f.read()
+
+          faq = {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                  {
+                      "@type": "Question",
+                      "name": "どんな研修コンテンツがありますか？",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "品質管理基礎・ISO・GMP・HACCP・統計的手法・監査・クレーム対応など46コース以上の動画・クイズ・音声教材を提供しています。"
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "動画は1本何分ですか？",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "1モジュール約10分。スキマ時間で学べる構成です。"
+                      }
+                  },
+                  {
+                      "@type": "Question",
+                      "name": "コンテンツはどうやって学ぶのですか？",
+                      "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "動画視聴→確認クイズ→音声解説で復習の3ステップ。PC・スマホ対応でいつでも学習できます。"
+                      }
+                  }
+              ]
+          }
+
+          bc = {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                  {"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://top.sangyo-tech.jp/"},
+                  {"@type": "ListItem", "position": 2, "name": "コンテンツ一覧", "item": "https://contents.sangyo-tech.jp/"}
+              ]
+          }
+
+          faq_tag = '<script type="application/ld+json">' + json.dumps(faq, ensure_ascii=False) + '</script>'
+          bc_tag = '<script type="application/ld+json">' + json.dumps(bc, ensure_ascii=False) + '</script>'
+
+          if 'FAQPage' not in t:
+              t = t.replace('</head>', faq_tag + '\n' + bc_tag + '\n</head>')
+
+          with open('index.html', 'w', encoding='utf-8') as f:
+              f.write(t)
+          print('Done')
+          PYEOF
+      - name: Commit
+        run: |
+          git config user.name sangyo-tech
+          git config user.email noreply@sangyo-tech.jp
+          git add -A
+          git diff --cached --quiet && echo "No changes" || git commit -m "fix(aio): add FAQPage + BreadcrumbList JSON-LD" && git push
+      - name: Cleanup
+        if: always()
+        run: |
+          git pull --rebase
+          git rm .github/workflows/fix-aio.yml
+          git commit -m "chore: remove workflow" && git push
