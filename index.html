@@ -25,6 +25,91 @@
 .content-card-link:hover .content-card{transform:translateY(-2px)}
 .content-card-link.hidden{display:none!important}
 .content-card-link .content-card{height:100%}
+
+
+/* Codex visible redesign 2026-05-24 */
+:root{
+  --codex-ink:#f7fbff;
+  --codex-muted:#d5e1f2;
+  --codex-cyan:#7dd8f5;
+  --codex-green:#63e6a3;
+  --codex-gold:#f2c94c;
+  --codex-violet:#c7a6ff;
+  --codex-pink:#ff9fb2;
+}
+body{
+  background:
+    radial-gradient(circle at 12% 6%,rgba(125,216,245,.20),transparent 27%),
+    radial-gradient(circle at 88% 10%,rgba(242,201,76,.17),transparent 28%),
+    linear-gradient(180deg,#06101d 0%,#081323 48%,#0b1120 100%)!important;
+  color:var(--codex-ink)!important;
+}
+body :is(section,.section,.svc-section,.browser,.filter-section,.flow-section,.faq-section,.cta-section,.mission,.target,.content,.features,.creator,.news-section){
+  position:relative!important;
+  background:
+    linear-gradient(100deg,rgba(125,216,245,.12),transparent 44%),
+    linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015))!important;
+  border-top:1px solid rgba(125,216,245,.26)!important;
+  border-bottom:1px solid rgba(255,255,255,.08)!important;
+}
+body :is(section,.section,.svc-section,.browser,.filter-section,.flow-section,.faq-section,.cta-section,.mission,.target,.content,.features,.creator,.news-section):nth-of-type(4n+2){
+  background:
+    radial-gradient(circle at 86% 16%,rgba(99,230,163,.16),transparent 32%),
+    linear-gradient(180deg,#071b1d 0%,#0b201f 100%)!important;
+}
+body :is(section,.section,.svc-section,.browser,.filter-section,.flow-section,.faq-section,.cta-section,.mission,.target,.content,.features,.creator,.news-section):nth-of-type(4n+3){
+  background:
+    radial-gradient(circle at 12% 22%,rgba(199,166,255,.16),transparent 34%),
+    linear-gradient(180deg,#111225 0%,#1a1730 100%)!important;
+}
+body :is(section,.section,.svc-section,.browser,.filter-section,.flow-section,.faq-section,.cta-section,.mission,.target,.content,.features,.creator,.news-section):nth-of-type(4n){
+  background:
+    linear-gradient(95deg,rgba(242,201,76,.15),transparent 42%),
+    linear-gradient(180deg,#18150f 0%,#221d12 100%)!important;
+}
+body :is(section,.section,.svc-section,.browser,.filter-section,.flow-section,.faq-section,.cta-section,.mission,.target,.content,.features,.creator,.news-section)::before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  width:100%!important;
+  height:5px!important;
+  background:linear-gradient(90deg,var(--codex-cyan),var(--codex-green),var(--codex-gold),transparent)!important;
+  opacity:.9!important;
+  pointer-events:none!important;
+}
+body :is(.card,.svc-card,.tool-card,.content-card,.content-card-link,.customer-card,.article-card,.post-card,.result-card,.faq-item,.plan-card,.price-card,.course-card,.feature-card,.step-body,.industry-card,.profile-main,.career-summary,.career-card,.supervisor,.summary-item,.stat,.stat-item,.news-item,.source-card,.sidebar-card,.cta-card){
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04)),
+    linear-gradient(135deg,#132137 0%,#0a1425 100%)!important;
+  color:var(--codex-ink)!important;
+  border:1px solid rgba(125,216,245,.36)!important;
+  box-shadow:inset 0 5px 0 var(--card-accent,var(--codex-cyan)),0 22px 58px rgba(0,0,0,.30)!important;
+}
+body :is(.card,.svc-card,.tool-card,.content-card,.customer-card,.article-card,.post-card,.result-card,.faq-item,.plan-card,.price-card,.course-card,.feature-card,.step-body,.industry-card,.profile-main,.career-summary,.career-card,.supervisor,.summary-item,.stat,.stat-item,.news-item,.source-card,.sidebar-card,.cta-card):nth-child(4n+1){--card-accent:var(--codex-cyan)}
+body :is(.card,.svc-card,.tool-card,.content-card,.customer-card,.article-card,.post-card,.result-card,.faq-item,.plan-card,.price-card,.course-card,.feature-card,.step-body,.industry-card,.profile-main,.career-summary,.career-card,.supervisor,.summary-item,.stat,.stat-item,.news-item,.source-card,.sidebar-card,.cta-card):nth-child(4n+2){--card-accent:var(--codex-green)}
+body :is(.card,.svc-card,.tool-card,.content-card,.customer-card,.article-card,.post-card,.result-card,.faq-item,.plan-card,.price-card,.course-card,.feature-card,.step-body,.industry-card,.profile-main,.career-summary,.career-card,.supervisor,.summary-item,.stat,.stat-item,.news-item,.source-card,.sidebar-card,.cta-card):nth-child(4n+3){--card-accent:var(--codex-gold)}
+body :is(.card,.svc-card,.tool-card,.content-card,.customer-card,.article-card,.post-card,.result-card,.faq-item,.plan-card,.price-card,.course-card,.feature-card,.step-body,.industry-card,.profile-main,.career-summary,.career-card,.supervisor,.summary-item,.stat,.stat-item,.news-item,.source-card,.sidebar-card,.cta-card):nth-child(4n){--card-accent:var(--codex-violet)}
+body :is(h1,h2,h3,h4,.section-title,.title,.headline){color:var(--codex-ink)!important;letter-spacing:0!important;text-wrap:balance;}
+body :is(p,li,.lead,.description,.summary,.text,.meta){color:var(--codex-muted)!important;}
+body :is(.chip,.tag,.badge,.role-badge,.filter-chip,.industry-chip){
+  background:rgba(125,216,245,.13)!important;
+  border-color:rgba(125,216,245,.42)!important;
+  color:#dff7ff!important;
+}
+body :is(a,.btn,.button,.cta-btn,.svc-btn,.quick-btn){
+  transition:transform .16s ease,box-shadow .16s ease,background .16s ease!important;
+}
+body :is(a.btn,.btn,.button,.cta-btn,.svc-btn,.quick-btn):hover{
+  transform:translateY(-2px)!important;
+}
+@media(prefers-reduced-motion:no-preference){
+  body :is(.card,.svc-card,.tool-card,.content-card,.customer-card,.article-card,.post-card,.result-card,.faq-item,.plan-card,.price-card,.course-card,.feature-card,.step-body,.industry-card,.profile-main,.career-summary,.career-card,.supervisor,.summary-item,.stat,.stat-item,.news-item){
+    animation:codexRise .72s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes codexRise{from{opacity:.62;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+}
+
 </style>
 <!-- AI_SEARCH_STRUCTURED_DATA_START -->
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","@id":"https://sangyo-tech.jp/#organization","name":"Qulio合同会社","alternateName":"産業技術アカデミー","url":"https://sangyo-tech.jp/","logo":"https://sangyo-tech.jp/ogp.png","address":{"@type":"PostalAddress","addressCountry":"JP","addressRegion":"神奈川県","addressLocality":"横浜市西区","streetAddress":"北幸2丁目10番48号 むつみビル3階"},"sameAs":["https://sangyo-tech.jp/","https://note.sangyo-tech.jp/","https://contents.sangyo-tech.jp/"]},{"@context":"https://schema.org","@type":"WebSite","@id":"https://sangyo-tech.jp/#website","url":"https://sangyo-tech.jp/","name":"産業技術アカデミー","description":"製造業向け品質管理・ISO・GMP・マネジメント教育を、動画・聞き流しコンテンツ・確認テストで仕組み化する法人向けサービス。","publisher":{"@id":"https://sangyo-tech.jp/#organization"},"inLanguage":"ja","potentialAction":{"@type":"SearchAction","target":"https://contents.sangyo-tech.jp/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@context":"https://schema.org","@type":"Service","@id":"https://sangyo-tech.jp/#service","name":"産業技術アカデミー","serviceType":"製造業向けeラーニング・品質教育サービス","provider":{"@id":"https://sangyo-tech.jp/#organization"},"areaServed":"JP","audience":{"@type":"BusinessAudience","audienceType":"300人以下の製造業・品質管理部門・教育担当者"},"description":"品質管理、ISO、GMP、規格、マネジメントを、公開済みプレイリスト49件を中心に、聞き流し音声と確認テストで学べる法人向けオンライン教育サービス。","offers":{"@type":"AggregateOffer","priceCurrency":"JPY","lowPrice":"3300","highPrice":"33000","offerCount":"3","url":"https://pricing.sangyo-tech.jp/"}},{"@context":"https://schema.org","@type":"WebPage","@id":"https://contents.sangyo-tech.jp/#webpage","url":"https://contents.sangyo-tech.jp/","name":"コンテンツ一覧 | 産業技術アカデミー","description":"産業技術アカデミーの動画・音声・確認テストのコンテンツ一覧。製造業の品質・規格・GMP・マネジメントテーマを探せます。","inLanguage":"ja","dateModified":"2026-05-07","isPartOf":{"@id":"https://sangyo-tech.jp/#website"},"about":{"@id":"https://sangyo-tech.jp/#service"},"publisher":{"@id":"https://sangyo-tech.jp/#organization"}},{"@context":"https://schema.org","@type":"ItemList","@id":"https://contents.sangyo-tech.jp/#itemlist","name":"コンテンツ一覧 | 産業技術アカデミー","description":"産業技術アカデミーの動画・音声・確認テストのコンテンツ一覧。製造業の品質・規格・GMP・マネジメントテーマを探せます。","itemListElement":[{"@type":"ListItem","position":1,"url":"https://sangyo-tech.jp/"},{"@type":"ListItem","position":2,"url":"https://sangyo-tech.jp/news/"},{"@type":"ListItem","position":3,"url":"https://course.sangyo-tech.jp/"},{"@type":"ListItem","position":4,"url":"https://contents.sangyo-tech.jp/"},{"@type":"ListItem","position":5,"url":"https://pricing.sangyo-tech.jp/"},{"@type":"ListItem","position":6,"url":"https://service.sangyo-tech.jp/"},{"@type":"ListItem","position":7,"url":"https://apply.sangyo-tech.jp/"},{"@type":"ListItem","position":8,"url":"https://about-us.sangyo-tech.jp/"},{"@type":"ListItem","position":9,"url":"https://customers.sangyo-tech.jp/"},{"@type":"ListItem","position":10,"url":"https://tools.sangyo-tech.jp/"},{"@type":"ListItem","position":11,"url":"https://note.sangyo-tech.jp/"},{"@type":"ListItem","position":12,"url":"https://note.sangyo-tech.jp/articles/"},{"@type":"ListItem","position":13,"url":"https://audio.sangyo-tech.jp/"},{"@type":"ListItem","position":14,"url":"https://update.sangyo-tech.jp/"},{"@type":"ListItem","position":15,"url":"https://manual.sangyo-tech.jp/"}]}]}</script>
