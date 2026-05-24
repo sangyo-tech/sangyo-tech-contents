@@ -1,0 +1,24 @@
+name: Ensure unav.js v39
+on: workflow_dispatch
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update or add unav.js v39
+        run: |
+          # Replace any existing unav.js version references
+          find . -name '*.html' -exec sed -i 's|unav\.js?v=[0-9]*|unav.js?v=39|g' {} +
+          # Add unav.js if not present in any HTML file
+          for f in $(find . -name '*.html'); do
+            if ! grep -q 'unav\.js' "$f"; then
+              sed -i 's|</body>|<script defer src="https://sangyo-tech.jp/unav.js?v=39"></script>\n</body>|' "$f"
+            fi
+          done
+      - name: Commit changes
+        run: |
+          git config user.name "sangyo-tech"
+          git config user.email "noreply@sangyo-tech.jp"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: ensure unav.js v39 on all pages"
+          git push
