@@ -97,6 +97,19 @@ body :is(.chip,.tag,.badge,.role-badge,.filter-chip,.industry-chip){
   border-color:rgba(125,216,245,.42)!important;
   color:#dff7ff!important;
 }
+.filter-chip,
+.industry-chip{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  white-space:nowrap!important;
+  min-height:38px!important;
+}
+.filter-chip span,
+.industry-chip span{
+  margin-left:0!important;
+}
 .filter-chip.is-active,
 .industry-chip.is-active{
   background:linear-gradient(135deg,#ffdc66 0%,#f5b52f 100%)!important;
