@@ -12,7 +12,7 @@ jobs:
           # Add unav.js if not present in any HTML file
           for f in $(find . -name '*.html'); do
             if ! grep -q 'unav\.js' "$f"; then
-              sed -i 's|</body>|<script defer src="https://sangyo-tech.jp/unav.js?v=39"></script>\n</body>|' "$f"
+              sed -i 's|</body>|<script defer src="https://sangyo-tech.jp/unav.js?v=50"></script>\n</body>|' "$f"
             fi
           done
       - name: Commit changes
