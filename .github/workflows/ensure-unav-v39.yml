@@ -1,4 +1,4 @@
-name: Ensure unav.js v39
+﻿name: Ensure unav.js v39
 on: workflow_dispatch
 jobs:
   update:
@@ -8,11 +8,11 @@ jobs:
       - name: Update or add unav.js v39
         run: |
           # Replace any existing unav.js version references
-          find . -name '*.html' -exec sed -i 's|unav\.js?v=[0-9]*|unav.js?v=39|g' {} +
+          find . -name '*.html' -exec sed -i 's|unav\.js?v=[0-9]*|unav.js?v=52|g' {} +
           # Add unav.js if not present in any HTML file
           for f in $(find . -name '*.html'); do
             if ! grep -q 'unav\.js' "$f"; then
-              sed -i 's|</body>|<script defer src="https://sangyo-tech.jp/unav.js?v=51"></script>\n</body>|' "$f"
+              sed -i 's|</body>|<script defer src="https://sangyo-tech.jp/unav.js?v=52"></script>\n</body>|' "$f"
             fi
           done
       - name: Commit changes
